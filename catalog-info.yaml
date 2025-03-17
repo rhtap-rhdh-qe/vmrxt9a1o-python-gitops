@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: vmrxt9a1o-python-gitops
+  description: This is GitOps manifest for vmrxt9a1o-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=vmrxt9a1o-python
+    backstage.io/kubernetes-id: vmrxt9a1o-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: vmrxt9a1o-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:vmrxt9a1o-python
